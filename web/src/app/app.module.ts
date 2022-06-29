@@ -16,6 +16,8 @@ import { provideFirebaseApp } from '@angular/fire/app';
 import { getApp, initializeApp } from 'firebase/app';
 import { AngularFireModule } from '@angular/fire/compat';
 
+import { MaterialModule } from './material/material.module';
+
 
 @NgModule({
   declarations: [
@@ -28,6 +30,7 @@ import { AngularFireModule } from '@angular/fire/compat';
     AppRoutingModule,
     BrowserAnimationsModule,
     SharedModule,
+    MaterialModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
@@ -38,6 +41,7 @@ import { AngularFireModule } from '@angular/fire/compat';
         isTokenAutoRefreshEnabled: true,
       });
     }),
+
   ],
   providers: [],
   bootstrap: [AppComponent]
