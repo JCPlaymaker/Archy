@@ -17,13 +17,15 @@ import { getApp, initializeApp } from 'firebase/app';
 import { AngularFireModule } from '@angular/fire/compat';
 
 import { MaterialModule } from './material/material.module';
+import { UserTableComponent } from './user-table/user-table.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HomePageComponent,
-    LeaderboardComponent
+    LeaderboardComponent,
+    UserTableComponent
   ],
   imports: [
     BrowserModule,
