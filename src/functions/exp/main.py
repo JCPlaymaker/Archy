@@ -66,7 +66,10 @@ def exp(event: dict, _context: Context):
             exp_needed_to_level_up: int = 5 * (level**2) + (50 * level) + 100 - exp_toward_next_level
 
             added_exp: int = random.randint(45, 75)
-
+            
+            # Space reserved for when JayCee gets good he can add more xp to Server Boosters 
+            
+            
             batch.update(doc_ref, ({"message_count": Increment(1)}))
 
             if added_exp >= exp_needed_to_level_up:
