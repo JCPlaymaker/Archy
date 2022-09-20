@@ -33,6 +33,7 @@ def exp(event: dict, _context: Context):
         avatar_url = pubsub_message.get("avatar_url", None)
         server_id = pubsub_message.get("server_id", None)
         server_name = pubsub_message.get("server_name", None)
+        is_boosting = pubsub.get("is_boosting", None)
 
         if not user_id or not username or not server_id or not server_name:
             print("Exit: Missing data in payload")
@@ -67,6 +68,9 @@ def exp(event: dict, _context: Context):
 
             added_exp: int = random.randint(45, 75)
 
+            # Gives extra xp to server boosters    
+            added_nitro_exp: int = random.randint(45, 75) * 1.5           
+ 
             batch.update(doc_ref, ({"message_count": Increment(1)}))
 
             if added_exp >= exp_needed_to_level_up:
